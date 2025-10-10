@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+void machineEp(float EPS)
+{
+	float prev_epsilon;
+	while ((1 + EPS) != 1)
+	{
+		prev_epsilon = EPS;
+		EPS /= 2;
+		cout << "Machine Epsilon: " << prev_epsilon << endl;                                                                                                                                                                                                                                                                                                                                    
+	}
+}
+
+int main()
+{
+	machineEp(1);
+	return 0;
+}
