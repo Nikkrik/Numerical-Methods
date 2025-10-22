@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Известные точки (x, y)
+    double x[] = {0, 1, 2, 3, 4};
+    double y[] = {0, 1, 4, 9, 16};
+    int n = 5; // количество точек
+    
+    // Точка для интерполяции
+    double targetX = 2.5;
+    double result;
+    
+    // Поиск интервала и интерполяция
+    for (int i = 1; i < n; i++) {
+        if (targetX <= x[i]) {
+            // Линейная интерполяция: y = y0 + (y1-y0)*(x-x0)/(x1-x0)
+            result = y[i-1] + (y[i] - y[i-1]) * (targetX - x[i-1]) / (x[i] - x[i-1]);
+            break;
+        }
+    }
+    
+    cout << "f(" << targetX << ") = " << result << endl;
+    return 0;
+}
