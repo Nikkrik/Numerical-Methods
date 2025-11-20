@@ -1,0 +1,65 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+// Функция для вычисления интеграла методом трапеций
+double trapezoidal_rule(double (*f)(double), double a, double b, int n) {
+    double h = (b - a) / n;
+    double sum = 0.5 * (f(a) + f(b));
+    
+    for (int i = 1; i < n; ++i) {
+        double x = a + i * h;
+        sum += f(x);
+    }
+    
+    return sum * h;
+}
+
+// Подынтегральные функции
+double f1(double x) { return 2*x + 1; }
+double f2(double x) { return sin(x); }
+
+int main() {
+    // Пределы интегрирования
+    const double a1 = 0, b1 = 2;
+    const double a2 = 0, b2 = M_PI;
+    
+    // Точные значения интегралов
+    const double exact1 = 6.0;
+    const double exact2 = 2.0;
+    
+    // Начальное число разбиений
+    int n = 8;
+
+    cout << fixed << setprecision(8);
+    cout << "∫(2x+1)dx от 0 до 2:\n";
+    
+    // Вычисление для первого интеграла
+    double I_n1 = trapezoidal_rule(f1, a1, b1, n);
+    double I_2n1 = trapezoidal_rule(f1, a1, b1, 2*n);
+    double error_runge1 = (I_2n1 - I_n1) / 3;
+    double actual_error1 = I_2n1 - exact1;
+    
+    cout << "При n=" << n << ": " << I_n1 << "\n";
+    cout << "При 2n=" << 2*n << ": " << I_2n1 << "\n";
+    cout << "Точное значение: " << exact1 << "\n";
+    cout << "Оценка погрешности (Рунге): " << error_runge1 << "\n";
+    cout << "Реальная погрешность: " << actual_error1 << "\n\n";
+
+    cout << "∫sin(x)dx от 0 до π:\n";
+    
+    // Вычисление для второго интеграла
+    double I_n2 = trapezoidal_rule(f2, a2, b2, n);
+    double I_2n2 = trapezoidal_rule(f2, a2, b2, 2*n);
+    double error_runge2 = (I_2n2 - I_n2) / 3;
+    double actual_error2 = I_2n2 - exact2;
+    
+    cout << "При n=" << n << ": " << I_n2 << "\n";
+    cout << "При 2n=" << 2*n << ": " << I_2n2 << "\n";
+    cout << "Точное значение: " << exact2 << "\n";
+    cout << "Оценка погрешности (Рунге): " << error_runge2 << "\n";
+    cout << "Реальная погрешность: " << actual_error2 << "\n";
+
+    return 0;
