@@ -63,3 +63,4 @@ int main() {
     cout << "Реальная погрешность: " << actual_error2 << "\n";
 
     return 0;
+}
