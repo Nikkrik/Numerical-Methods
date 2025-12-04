@@ -5,6 +5,10 @@ public class Integration {
     static double f1(double x) { return 2*x + 1; }
     static double f2(double x) { return Math.sin(x); }
 
+    interface Function {
+        double apply(double x);
+    }
+
     static double trapezoidal_rule(Function f, double a, double b, int n) {
         double h = (b - a) / n;
         double sum = 0.5 * (f.apply(a) + f.apply(b));
@@ -17,17 +21,13 @@ public class Integration {
         return sum * h;
     }
 
-    interface Function {
-        double apply(double x);
-    }
+    public static void run() {
+        System.out.println("=== Метод трапеций ===");
 
-    public void run() {
         final double a1 = 0, b1 = 2;
         final double a2 = 0, b2 = Math.PI;
-
         final double exact1 = 6.0;
         final double exact2 = 2.0;
-
         int n = 8;
 
         System.out.printf("∫(2x+1)dx от 0 до 2:%n");
@@ -55,5 +55,11 @@ public class Integration {
         System.out.printf("Точное значение: %.8f%n", exact2);
         System.out.printf("Оценка погрешности (Рунге): %.8f%n", error_runge2);
         System.out.printf("Реальная погрешность: %.8f%n", actual_error2);
+        System.out.println();
+    }
+
+    // Свой main для отдельного запуска
+    public static void main(String[] args) {
+        run();
     }
 }

@@ -1,7 +1,9 @@
 package Tasks;
 
 public class FirstNewtonInterpolation {
-    public void run() {
+    public static void run() {
+        System.out.println("=== Интерполяция полиномом Ньютона ===");
+
         double[] x = {10, 15, 20, 25};
         double[] y = {3, 7, 11, 17};
         int n = 4;
@@ -32,5 +34,11 @@ public class FirstNewtonInterpolation {
 
         System.out.println("P(1.5) для x^3 = " + result);
         System.out.println("Точное значение: " + (1.5*1.5*1.5));
+        System.out.println();
+    }
+
+    // Свой main для отдельного запуска
+    public static void main(String[] args) {
+        run();
     }
 }
