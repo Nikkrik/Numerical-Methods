@@ -18,6 +18,9 @@ public class Main {
 
         System.out.println("\n=== 5. Метод трапеций ===");
         Integration.run();
+
+        System.out.println("\n=== 6. Модифицированный метод Ньютона ===");
+        ModifiedNewtonMethod.run();
     }
 }
 

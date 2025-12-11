@@ -2,7 +2,7 @@ package Tasks;
 
 public class MachineEpsilon {
     public static void run() {
-        System.out.println("=== Машинное эпсилон ===");
+        System.out.println("=== Машинный эпсилон ===");
 
         float EPS = 1;
         float prev_epsilon = 0;
