@@ -58,7 +58,6 @@ public class Integration {
         System.out.println();
     }
 
-    // Свой main для отдельного запуска
     public static void main(String[] args) {
         run();
     }

@@ -1,6 +1,7 @@
 import Tasks.*;
 
 
+
 public class Main {
     public static void main(String[] args) {
 
@@ -10,8 +11,8 @@ public class Main {
         System.out.println("\n=== 2. Линейная интерполяция ===");
         LinearInterpolation.run();
 
-        System.out.println("\n=== 3. Численные производные ===");
-        NumericalDifferentations.run();
+        System.out.println("\n=== 3. Численное дифференцирование ===");
+        NumericalDifferentiation.run();
 
         System.out.println("\n=== 4. Интерполяция полиномом Ньютона ===");
         FirstNewtonInterpolation.run();
