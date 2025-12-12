@@ -1,4 +1,4 @@
-package Tasks;
+package Tasks.NotAccepted;
 
 import java.util.function.Function;
 
@@ -153,7 +153,6 @@ public class ModifiedNewtonMethod {
         }
         System.out.println();
     }
-
     public static void main(String[] args) {
         run();
     }

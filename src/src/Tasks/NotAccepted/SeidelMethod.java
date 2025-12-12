@@ -1,4 +1,4 @@
-package Tasks;
+package Tasks.NotAccepted;
 
 import java.util.Arrays;
 

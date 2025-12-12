@@ -1,5 +1,10 @@
-import Tasks.*;
-
+import Tasks.Accepted.FirstNewtonInterpolation;
+import Tasks.Accepted.LinearInterpolation;
+import Tasks.Accepted.MachineEpsilon;
+import Tasks.Accepted.NumericalDifferentiation;
+import Tasks.NotAccepted.Integration;
+import Tasks.NotAccepted.ModifiedNewtonMethod;
+import Tasks.NotAccepted.SeidelMethod;
 
 
 public class Main {

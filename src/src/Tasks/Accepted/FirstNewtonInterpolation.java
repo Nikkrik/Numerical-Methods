@@ -1,4 +1,4 @@
-package Tasks;
+package Tasks.Accepted;
 
 public class FirstNewtonInterpolation {
     public static void run() {

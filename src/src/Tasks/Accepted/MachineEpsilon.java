@@ -1,4 +1,4 @@
-package Tasks;
+package Tasks.Accepted;
 
 public class MachineEpsilon {
     public static void run() {
@@ -15,7 +15,6 @@ public class MachineEpsilon {
         System.out.println();
     }
 
-    // Свой main для отдельного запуска
     public static void main(String[] args) {
         run();
     }

@@ -1,4 +1,4 @@
-package Tasks;
+package Tasks.Accepted;
 
 import java.util.function.DoubleUnaryOperator;
 import java.util.ArrayList;
