@@ -132,26 +132,6 @@ public class ModifiedNewtonMethod {
         System.out.printf("Корень: x = %.10f\n", rootClassical);
         System.out.printf("f(x) = %.2e\n", f.apply(rootClassical));
         System.out.printf("Время выполнения: %.3f мс\n", classicalTime / 1_000_000.0);
-
-        // Сравниваем
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("СРАВНЕНИЕ МЕТОДОВ:");
-        System.out.printf("Разница в результатах: %.2e\n", Math.abs(rootModified - rootClassical));
-        System.out.printf("Классический метод быстрее в %.2f раз\n", (double)classicalTime/modifiedTime);
-        System.out.println("\nМодифицированный метод требует меньше вычислений,");
-        System.out.println("но может сходиться медленнее (линейная сходимость)");
-
-        // Проверяем точность
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("ПРОВЕРКА ТОЧНОСТИ:");
-        double exactValue = 1.284724;
-        System.out.printf("Известное приближение: %.6f\n", exactValue);
-        System.out.printf("Наша погрешность: %.2e\n", Math.abs(rootModified - exactValue));
-
-        if (Math.abs(f.apply(rootModified)) < eps) {
-            System.out.println("✓ Точность достигнута!");
-        }
-        System.out.println();
     }
     public static void main(String[] args) {
         run();
