@@ -92,7 +92,7 @@ public class ModifiedNewtonMethod {
 
         double a = 0.0;
         double b = 2.0;
-        double eps = 1e-8;
+        double eps = 0.001;
         int maxIter = 100;
 
         System.out.println("==============================================");
