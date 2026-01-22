@@ -22,13 +22,13 @@ public class ModifiedNewtonMethod {
         // ВОТ ГЛАВНАЯ МОДИФИКАЦИЯ:
         // Производную вычисляем ОДИН РАЗ и запоминаем
         double fixedDerivative = fPrime.apply(x0);
-        
-        // МИНИМАЛЬНОЕ ИЗМЕНЕНИЕ: Проверка деления на ноль
-        if (Math.abs(fixedDerivative) < 1e-15) {
+
+        //Проверка деления на ноль
+        if (Math.abs(fixedDerivative) < 0.001) {
             System.out.println("ОШИБКА: деление на ноль (f'(x0) = 0)!");
             return Double.NaN;
         }
-        
+
         System.out.println("f'(x0) = " + fixedDerivative + " (будет использоваться во всех итерациях)");
 
         double x = x0;
@@ -77,13 +77,13 @@ public class ModifiedNewtonMethod {
             double fx = f.apply(x);
             // Здесь производная вычисляется КАЖДЫЙ РАЗ - это дороже!
             double derivative = fPrime.apply(x);
-            
-            // МИНИМАЛЬНОЕ ИЗМЕНЕНИЕ: Проверка деления на ноль
-            if (Math.abs(derivative) < 1e-15) {
+
+            //Проверка деления на ноль
+            if (Math.abs(derivative) < 0.001) {
                 System.out.println("\nОШИБКА: деление на ноль (f'(x) = 0)!");
                 return Double.NaN;
             }
-            
+
             double xNew = x - fx / derivative;
 
             System.out.printf("%2d| %13.8f | %13.8f | %12.8f | %12.8f | %.2e\n",
@@ -106,7 +106,7 @@ public class ModifiedNewtonMethod {
 
         double a = 0.0;
         double b = 2.0;
-        double eps = 1e-8;
+        double eps = 0.001;
         int maxIter = 100;
 
         System.out.println("==============================================");
@@ -153,8 +153,7 @@ public class ModifiedNewtonMethod {
             System.out.printf("Время выполнения: %.3f мс\n", classicalTime / 1_000_000.0);
         }
     }
-    
+
     public static void main(String[] args) {
         run();
     }
-}
