@@ -24,7 +24,7 @@ public class ModifiedNewtonMethod {
         double fixedDerivative = fPrime.apply(x0);
 
         //Проверка деления на ноль
-        if (Math.abs(fixedDerivative) < 0.001) {
+        if (Math.abs(fixedDerivative) < 1e-15) {
             System.out.println("ОШИБКА: деление на ноль (f'(x0) = 0)!");
             return Double.NaN;
         }
@@ -79,7 +79,7 @@ public class ModifiedNewtonMethod {
             double derivative = fPrime.apply(x);
 
             //Проверка деления на ноль
-            if (Math.abs(derivative) < 0.001) {
+            if (Math.abs(derivative) < 1e-15) {
                 System.out.println("\nОШИБКА: деление на ноль (f'(x) = 0)!");
                 return Double.NaN;
             }
