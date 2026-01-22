@@ -157,3 +157,4 @@ public class ModifiedNewtonMethod {
     public static void main(String[] args) {
         run();
     }
+}
